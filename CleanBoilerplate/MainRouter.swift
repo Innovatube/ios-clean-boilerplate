@@ -22,7 +22,6 @@ class MainRouter {
   
     view.interactor = interactor
     interactor.presenter = presenter
-    interactor.resourceHelper = AccountResourceHelper()
     presenter.view = view
     view.router = self
     
@@ -39,7 +38,6 @@ class MainRouter {
     
     view.interactor = interactor
     interactor.presenter = presenter
-    interactor.resourceHelper = CarResourceHelper()
     presenter.view = view
     view.router = self
     
@@ -56,7 +54,6 @@ class MainRouter {
     
     view.interactor = interactor
     interactor.presenter = presenter
-    interactor.resourceHelper = AccountResourceHelper()
     presenter.view = view
     view.router = self
     
@@ -65,5 +62,38 @@ class MainRouter {
   
   func displaySettingView(){
     
+  }
+  
+  func displayRegisterView() {
+    guard let view : RegisterView = UIStoryboard.main.instantiateVC() else {
+      print("Error getting Register view")
+      return
+    }
+    
+    let presenter = RegisterPresenter()
+    let interactor = RegisterInteractor()
+    
+    view.interactor = interactor
+    interactor.presenter = presenter
+    presenter.view = view
+    view.router = self
+    navigationController.pushViewController(view, animated: true)
+
+  }
+  
+  func displayForgotPasswordView() {
+    guard let view : ResetPasswordView = UIStoryboard.main.instantiateVC() else {
+      print("Error getting ForgotPasswordView")
+      return
+    }
+    let presenter = ResetPasswordPresenter()
+    let interactor = ResetPasswordInteractor()
+    
+    view.interactor = interactor
+    interactor.presenter = presenter
+    presenter.view = view
+    view.router = self
+    navigationController.pushViewController(view, animated: true)
+
   }
 }
