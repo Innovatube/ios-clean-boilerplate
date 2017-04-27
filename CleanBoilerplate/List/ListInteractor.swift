@@ -16,22 +16,21 @@ protocol ListInteractorInterface {
 
 class ListInteractor : ListInteractorInterface {
   var presenter : ListPresenterInterface!
-  var resourceHelper : CarResourceHelper!
   
   func requestReloadData(id: Int, offset: Int) {
-      resourceHelper.cars().subscribe(onNext: { (entities) in
-        self.presenter.reload(data: entities.map{ $0.name ?? "" } )
-      }, onError: { (_) in
-        self.presenter.retrieveDataFailed()
-      })
+//      resourceHelper.cars().subscribe(onNext: { (entities) in
+//        self.presenter.reload(data: entities.map{ $0.name ?? "" } )
+//      }, onError: { (_) in
+//        self.presenter.retrieveDataFailed()
+//      })
   }
   
   func bidCar(id: Int, price: Int) {
-    resourceHelper.carBid(id: id, price: price).subscribe(onNext: { (_) in
-      self.presenter.biddingSuccess()
-    }) { (_) in
-      self.presenter.biddingFailed()
-    }
+//    resourceHelper.carBid(id: id, price: price).subscribe(onNext: { (_) in
+//      self.presenter.biddingSuccess()
+//    }) { (_) in
+//      self.presenter.biddingFailed()
+//    }
   }
   
 }

@@ -13,5 +13,6 @@ protocol ResetPasswordViewInterface {
 }
 
 class ResetPasswordView : UIViewController, ResetPasswordViewInterface {
-    var interactor : ResetPasswordInteractorInterface! 
+  var interactor : ResetPasswordInteractorInterface!
+  var router : MainRouter!
 }

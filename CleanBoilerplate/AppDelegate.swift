@@ -11,21 +11,21 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  let googleService = Assembly.googleSignInApplicationService()
+//GGL  let googleService = Assembly.googleSignInApplicationService()
   let navigationService = Assembly.navigationApplicationService()
-  let facebookService = Assembly.facebookApplicationService()
+//FB  let facebookService = Assembly.facebookApplicationService()
 
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-    _ = googleService.application(application, didFinishLaunchingWithOptions: launchOptions)
+//GGL    _ = googleService.application(application, didFinishLaunchingWithOptions: launchOptions)
       _ = navigationService.application(application, didFinishLaunchingWithOptions: launchOptions)
-    _ = facebookService.application(application, didFinishLaunchingWithOptions: launchOptions)
+//FB    _ = facebookService.application(application, didFinishLaunchingWithOptions: launchOptions)
     return true
   }
   
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    _ = googleService.application(app, open: url, options: options)
-    _ = facebookService.application(app, open: url, options: options)
+//GGL    _ = googleService.application(app, open: url, options: options)
+//FB    _ = facebookService.application(app, open: url, options: options)
     return true
   }
 }

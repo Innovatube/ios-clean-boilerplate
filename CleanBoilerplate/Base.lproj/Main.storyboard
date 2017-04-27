@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,37 +27,22 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="x9X-dW-72J"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZH-XB-lEV">
                                 <rect key="frame" x="71" y="340" width="233" height="30"/>
                                 <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9m6-FX-DRa"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t42-5e-owq">
                                 <rect key="frame" x="133" y="534" width="108" height="30"/>
                                 <state key="normal" title="Facebook Login"/>
-                                <connections>
-                                    <action selector="facebookLoginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VUc-V0-meV"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcl-Vg-vv6">
                                 <rect key="frame" x="139" y="580" width="96" height="30"/>
                                 <state key="normal" title="Google SignIn"/>
-                                <connections>
-                                    <action selector="googleSignInButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gtc-wF-Vae"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2K-5V-YeX">
                                 <rect key="frame" x="159" y="378" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
-                                <connections>
-                                    <action selector="registerButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sxv-wS-QgP"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E84-OS-jUB">
                                 <rect key="frame" x="71" y="264" width="233" height="30"/>
@@ -71,9 +56,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0N-65-Yuz">
                                 <rect key="frame" x="124" y="416" width="127" height="30"/>
                                 <state key="normal" title="Forgot password ?"/>
-                                <connections>
-                                    <action selector="forgotPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YcT-iK-ukl"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,8 +79,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="E84-OS-jUB" id="KFH-9O-N4p"/>
-                        <outlet property="passwordField" destination="azj-H4-6q7" id="g9V-Yb-qg1"/>
+                        <outlet property="emailField" destination="E84-OS-jUB" id="V1P-qz-CvK"/>
+                        <outlet property="facebookLoginButton" destination="t42-5e-owq" id="27I-cw-mk4"/>
+                        <outlet property="forgotPasswordButton" destination="M0N-65-Yuz" id="X9q-Ig-b9K"/>
+                        <outlet property="googleLoginButton" destination="zcl-Vg-vv6" id="uoy-yj-BJi"/>
+                        <outlet property="loginButton" destination="8ZH-XB-lEV" id="arc-MR-wQg"/>
+                        <outlet property="passwordField" destination="azj-H4-6q7" id="qYm-vZ-Sfe"/>
+                        <outlet property="registerButton" destination="I2K-5V-YeX" id="oN6-IC-akA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="867.61619190404804"/>
         </scene>
-        <!--View Controller-->
+        <!--RegisterView-->
         <scene sceneID="58B-UQ-JJ5">
             <objects>
-                <viewController id="1Wq-Qh-9Yu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterView" title="RegisterView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Wq-Qh-9Yu" customClass="RegisterView" customModule="CleanBoilerplate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hZb-Fv-2F3"/>
                         <viewControllerLayoutGuide type="bottom" id="UKb-AQ-ycL"/>
@@ -169,19 +156,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Icr-Lo-gVH">
-                                <rect key="frame" x="16" y="208" width="343" height="30"/>
+                                <rect key="frame" x="16" y="40" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5r-VN-7TB">
-                                <rect key="frame" x="16" y="246" width="343" height="30"/>
+                                <rect key="frame" x="16" y="78" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Hk-W0-P2V">
-                                <rect key="frame" x="16" y="284" width="343" height="30"/>
+                                <rect key="frame" x="16" y="116" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -203,7 +190,7 @@
                             <constraint firstItem="Icr-Lo-gVH" firstAttribute="leading" secondItem="xLI-7d-EYh" secondAttribute="leadingMargin" id="EHX-Rr-wNx"/>
                             <constraint firstItem="MoM-c8-q2I" firstAttribute="leading" secondItem="xLI-7d-EYh" secondAttribute="leadingMargin" id="JWs-Lw-y0G"/>
                             <constraint firstItem="7Hk-W0-P2V" firstAttribute="top" secondItem="s5r-VN-7TB" secondAttribute="bottom" constant="8" id="OOc-Gf-pAz"/>
-                            <constraint firstItem="Icr-Lo-gVH" firstAttribute="top" secondItem="hZb-Fv-2F3" secondAttribute="bottom" constant="188" id="Qdt-CL-YG9"/>
+                            <constraint firstItem="Icr-Lo-gVH" firstAttribute="top" secondItem="hZb-Fv-2F3" secondAttribute="bottom" constant="20" id="Qdt-CL-YG9"/>
                             <constraint firstItem="7Hk-W0-P2V" firstAttribute="trailing" secondItem="xLI-7d-EYh" secondAttribute="trailingMargin" id="QrC-jD-3AD"/>
                             <constraint firstItem="s5r-VN-7TB" firstAttribute="top" secondItem="Icr-Lo-gVH" secondAttribute="bottom" constant="8" id="WSU-eI-sBX"/>
                             <constraint firstItem="s5r-VN-7TB" firstAttribute="trailing" secondItem="xLI-7d-EYh" secondAttribute="trailingMargin" id="Yme-m3-eCt"/>
@@ -211,6 +198,12 @@
                             <constraint firstItem="MoM-c8-q2I" firstAttribute="trailing" secondItem="xLI-7d-EYh" secondAttribute="trailingMargin" id="ukN-y4-NEc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="Icr-Lo-gVH" id="lVN-gX-hcC"/>
+                        <outlet property="passwordField" destination="s5r-VN-7TB" id="bQa-pn-9Ub"/>
+                        <outlet property="registerButton" destination="MoM-c8-q2I" id="KB0-Cb-VeQ"/>
+                        <outlet property="repeatPasswordField" destination="7Hk-W0-P2V" id="hhW-AF-BNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHO-PT-LSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

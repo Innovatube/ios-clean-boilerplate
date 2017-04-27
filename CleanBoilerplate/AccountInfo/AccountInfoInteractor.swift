@@ -14,14 +14,8 @@ protocol AccountInfoInteractorInterface {
 
 class AccountInfoInteractor : AccountInfoInteractorInterface {
   var presenter : AccountInfoPresenterInterface!
-  var resourceHelper : AccountResourceHelper!
   
   func requestAccountInfo() {
-    resourceHelper.accountInfo().subscribe(onNext: { (entity) in
-      self.presenter.display(accountInfo: entity)
-    }) { (_) in
-      self.presenter.loadingAccountFailed()
-    }
   }
   
 }
