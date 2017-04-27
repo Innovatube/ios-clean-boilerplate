@@ -9,30 +9,28 @@
 import Foundation
 
 protocol LoginPresenterInterface {
-  func invalidEmail()
-  func invalidPassword()
-  func loginSuccess()
-  func loginFailed()
-  func resetPasswordSuccess()
-  func resetPaswordFailed()
+  func emailField(isValid : Bool)
+  func passwordField(isValid : Bool)
+  func loginButton(isValid: Bool)
+  func login(success: Bool)
 }
 
 class LoginPresenter: LoginPresenterInterface {
   var view : LoginViewInterface!
   
-  func invalidEmail(){
-    view.raiseEmailFieldError()
-  }
-  func invalidPassword(){
-    view.raisePasswordFieldError()
+  func emailField(isValid: Bool) {
+    view.emailField(isValid: isValid)
   }
   
-  func loginSuccess(){
-    view.displayListView()
+  func passwordField(isValid: Bool) {
+    view.passwordField(isValid: isValid)
   }
-  func loginFailed(){
-    view.displayErrorLoginMessage()
+  
+  func login(success: Bool) {
+    view.loginSuccess()
   }
-  func resetPasswordSuccess(){}
-  func resetPaswordFailed(){}
+  
+  func loginButton(isValid: Bool) {
+    view.loginButton(isValid: isValid)
+  }
 }

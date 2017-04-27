@@ -10,41 +10,45 @@ import Foundation
 import RxSwift
 
 protocol LoginInteractorInterface {
-  func login(email: String, password: String)
-  func forgotPassword(email:String)
-  func register()
-  func facebookLogin()
-  func googleSignIn()
+  func emailFieldChange(value: String)
+  func passwordFieldChange(value: String)
+  func loginButtonTouched()
 }
 
 class LoginInteractor : LoginInteractorInterface {
   var presenter : LoginPresenterInterface!
-  var resourceHelper : AccountResourceHelper!
+//  var resourceHelper : AccountResourceHelper!
   
-  func login(email: String, password: String){
-      resourceHelper.login(email: email, password: password).subscribe(onNext: { (_) in
-        self.presenter.loginSuccess()
-      }) { (_) in
-        self.presenter.loginFailed()
-    }
+  var emailFieldValidState : Bool = false {
+    didSet { presenter.emailField(isValid: emailFieldValidState) }
+  }
+  var passwordFieldValidState : Bool = false {
+    didSet { presenter.passwordField(isValid: passwordFieldValidState) }
+  }
+  var loginButtonValidState : Bool {
+    return emailFieldValidState && passwordFieldValidState
   }
   
-  func register() {
-    
+//  MARK: LoginInteractorInterface
+  
+  func emailFieldChange(value: String) {
+    emailFieldValidState = ValidationHelper.validate(email: value)
+    presenter.loginButton(isValid: loginButtonValidState)
   }
   
-  func forgotPassword(email:String) {
-    resourceHelper.resetPassword(email: email).subscribe(onNext: { (_) in
-      self.presenter.resetPasswordSuccess()
-    }, onError: { (_) in
-      self.presenter.resetPaswordFailed()
-    })
+  func passwordFieldChange(value: String) {
+    passwordFieldValidState = ValidationHelper.validate(password: value)
+    presenter.loginButton(isValid: loginButtonValidState)
   }
   
-  func facebookLogin() {
+  func loginButtonTouched() {
+//    resourceHelper.login(email: email, password: password).subscribe(onNext: { (_) in
+//      self.presenter.login(success: true)
+//    }) { (_) in
+//      self.presenter.login(success: false)
+//    }
   }
   
-  func googleSignIn() {
-    
-  }
+  
+  
 }

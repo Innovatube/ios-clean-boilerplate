@@ -13,65 +13,112 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 protocol LoginViewInterface {
-  func displayErrorLoginMessage()
-  func raiseEmailFieldError()
-  func raisePasswordFieldError()
-  func displayListView()
+  func loginButton(isValid: Bool)
+  func emailField(isValid: Bool)
+  func passwordField(isValid: Bool)
+  func loginSuccess()
 }
 
 class LoginView : UIViewController, LoginViewInterface, UITextFieldDelegate, GIDSignInUIDelegate {
   var interactor : LoginInteractorInterface!
   var router : MainRouter!
+  
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
+  @IBOutlet weak var loginButton: UIButton!
+  
+  @IBOutlet weak var registerButton : UIButton!
+  @IBOutlet weak var forgotPasswordButton: UIButton!
+  
+  @IBOutlet weak var facebookLoginButton: UIButton!
+  @IBOutlet weak var googleLoginButton: UIButton!
   
   override func viewDidLoad() {
     GIDSignIn.sharedInstance().uiDelegate = self
+    emailField.keyboardType = .emailAddress
+    passwordField.keyboardType = .alphabet
+    passwordField.isSecureTextEntry = true
+    
+    UIHelper.customize(textField: emailField)
+    UIHelper.customize(textField: passwordField)
+    
+    setupAction()
   }
   
-  @IBAction func loginButtonTouched(_ button: UIButton){
-    guard let emailFieldText = emailField.text else {
-      return
+  func setupAction(){
+    emailField.addTarget(self, action: #selector(emailFieldChangedValue(_:)), for: .editingChanged)
+    passwordField.addTarget(self, action: #selector(passwordFieldChangedValue(_:)), for: .editingChanged)
+    loginButton.addTarget(self, action: #selector(loginButtonTouched(_:)), for: .touchUpInside)
+    emailField.delegate = self
+    passwordField.delegate = self
+    
+    registerButton.addTarget(self, action: #selector(registerButtonTouched(_:)), for: .touchUpInside)
+    forgotPasswordButton.addTarget(self, action: #selector(forgotPassword(_:)), for: .touchUpInside)
+    facebookLoginButton.addTarget(self, action: #selector(facebookLoginButtonTouched(_:)), for: .touchUpInside)
+    googleLoginButton.addTarget(self, action: #selector(googleSignInButtonTouched(_:)), for: .touchUpInside)
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case emailField :
+      passwordField.becomeFirstResponder()
+    case passwordField:
+      passwordField.resignFirstResponder()
+      interactor.loginButtonTouched()
+    default: break
     }
-    guard let passwordFieldText = passwordField.text else {
-      return
-    }
-    interactor.login(email: emailFieldText, password: passwordFieldText)
+    return true
   }
   
-  @IBAction func registerButtonTouched(_ button: UIButton){
-    interactor.register()
+  func emailFieldChangedValue(_ sender: UITextField){
+    guard let string = sender.text else { return }
+    interactor.emailFieldChange(value: string)
+  }
+  func passwordFieldChangedValue(_ sender: UITextField){
+    guard let string = sender.text else { return }
+    interactor.passwordFieldChange(value: string)
   }
   
-  @IBAction func forgotPassword(_ button: UIButton){
-    interactor.forgotPassword(email: "asd")
+  func loginButtonTouched(_ button: UIButton){
+    guard emailField.text != nil else { return }
+    guard passwordField.text != nil else { return }
+    interactor.loginButtonTouched()
   }
   
-  @IBAction func facebookLoginButtonTouched(_ button: UIButton){
-    interactor.facebookLogin()
+  func registerButtonTouched(_ button: UIButton){
+    router.displayRegisterView()
+  }
+  
+  func forgotPassword(_ button: UIButton){
+    router.displayForgotPasswordView()
+  }
+  
+  func facebookLoginButtonTouched(_ button: UIButton){
     FBSDKLoginManager().logIn(withReadPermissions: ["public_profile"], from: self) { (_, _) in
       
     }
   }
   
-  @IBAction func googleSignInButtonTouched(_ button: UIButton){
+  func googleSignInButtonTouched(_ button: UIButton){
     GIDSignIn.sharedInstance().signIn()
   }
   
-  func raiseEmailFieldError() {
-    
-  }
+  //MARK: LoginViewInterface
   
-  func raisePasswordFieldError() {
-    
-  }
-  
-  func displayErrorLoginMessage() {
-    self.displayError(message: "Login error")
-  }
-  
-  func displayListView() {
+  func loginSuccess() {
     router.displayListView()
+  }
+  
+  func loginButton(isValid: Bool) {
+    loginButton.isEnabled = isValid
+  }
+  
+  func passwordField(isValid: Bool) {
+    passwordField.layer.borderColor = isValid ? UIColor.black.cgColor : UIColor.red.cgColor
+  }
+  
+  func emailField(isValid: Bool) {
+    emailField.layer.borderColor = isValid ? UIColor.black.cgColor : UIColor.red.cgColor
   }
 }
 
