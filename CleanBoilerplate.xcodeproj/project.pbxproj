@@ -15,21 +15,19 @@
 		0C1D3A3A1E88C42C00F43708 /* FacebookApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D3A391E88C42C00F43708 /* FacebookApplicationService.swift */; };
 		0C1D3A3C1E88C59E00F43708 /* GoogleApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D3A3B1E88C59E00F43708 /* GoogleApplicationService.swift */; };
 		0C1D3A3F1E88C73500F43708 /* NavigationApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D3A3E1E88C73500F43708 /* NavigationApplicationService.swift */; };
+		0C36C5EB1EB1DDA10009A1FC /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36C5E81EB1DDA10009A1FC /* RegisterInteractor.swift */; };
+		0C36C5EC1EB1DDA10009A1FC /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36C5E91EB1DDA10009A1FC /* RegisterPresenter.swift */; };
+		0C36C5ED1EB1DDA10009A1FC /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36C5EA1EB1DDA10009A1FC /* RegisterView.swift */; };
+		0C36C5F01EB1E44D0009A1FC /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36C5EF1EB1E44D0009A1FC /* UIHelper.swift */; };
 		0C3E531F1E7A74A0001459FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E531E1E7A74A0001459FD /* AppDelegate.swift */; };
 		0C3E53241E7A74A0001459FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3E53221E7A74A0001459FD /* Main.storyboard */; };
 		0C3E53261E7A74A0001459FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3E53251E7A74A0001459FD /* Assets.xcassets */; };
 		0C3E53291E7A74A0001459FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3E53271E7A74A0001459FD /* LaunchScreen.storyboard */; };
 		0C3E53371E7A797F001459FD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E53361E7A797F001459FD /* MainRouter.swift */; };
-		0C3E81171E83C5CE00F06224 /* CarResourceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E81161E83C5CE00F06224 /* CarResourceHelper.swift */; };
-		0C3E81191E83CD3300F06224 /* AccountResourceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E81181E83CD3300F06224 /* AccountResourceHelper.swift */; };
 		0C3E811D1E83D2A000F06224 /* AccountInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E811A1E83D2A000F06224 /* AccountInfoInteractor.swift */; };
 		0C3E811E1E83D2A000F06224 /* AccountInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E811B1E83D2A000F06224 /* AccountInfoPresenter.swift */; };
 		0C3E811F1E83D2A000F06224 /* AccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3E811C1E83D2A000F06224 /* AccountInfoView.swift */; };
-		0C6B90D01E827CF600A2BA6B /* AccountNetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6B90CF1E827CF600A2BA6B /* AccountNetworkHelper.swift */; };
-		0C6B90D21E827CFF00A2BA6B /* CarNetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6B90D11E827CFF00A2BA6B /* CarNetworkHelper.swift */; };
-		0C6B90D41E827D0900A2BA6B /* AccountDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6B90D31E827D0900A2BA6B /* AccountDatabaseHelper.swift */; };
-		0C6B90D61E827D1600A2BA6B /* CarDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6B90D51E827D1600A2BA6B /* CarDatabaseHelper.swift */; };
-		0C6B90D91E8285E500A2BA6B /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6B90D81E8285E500A2BA6B /* Errors.swift */; };
+		0C5AF5C61EB1EF7E00113A95 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5AF5C51EB1EF7E00113A95 /* ValidationHelper.swift */; };
 		0CCCBBAF1E811119003C6B8A /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBBAC1E811119003C6B8A /* LoginInteractor.swift */; };
 		0CCCBBB01E811119003C6B8A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBBAD1E811119003C6B8A /* LoginPresenter.swift */; };
 		0CCCBBB11E811119003C6B8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBBAE1E811119003C6B8A /* LoginView.swift */; };
@@ -59,6 +57,11 @@
 		0C1D3A391E88C42C00F43708 /* FacebookApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookApplicationService.swift; sourceTree = "<group>"; };
 		0C1D3A3B1E88C59E00F43708 /* GoogleApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApplicationService.swift; sourceTree = "<group>"; };
 		0C1D3A3E1E88C73500F43708 /* NavigationApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationApplicationService.swift; sourceTree = "<group>"; };
+		0C36C5E81EB1DDA10009A1FC /* RegisterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		0C36C5E91EB1DDA10009A1FC /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		0C36C5EA1EB1DDA10009A1FC /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		0C36C5EF1EB1E44D0009A1FC /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		0C36DCF41EB0436E00C67813 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		0C3E531B1E7A74A0001459FD /* CleanBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3E531E1E7A74A0001459FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C3E53231E7A74A0001459FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,16 +69,10 @@
 		0C3E53281E7A74A0001459FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C3E532A1E7A74A0001459FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3E53361E7A797F001459FD /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		0C3E81161E83C5CE00F06224 /* CarResourceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarResourceHelper.swift; sourceTree = "<group>"; };
-		0C3E81181E83CD3300F06224 /* AccountResourceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountResourceHelper.swift; sourceTree = "<group>"; };
 		0C3E811A1E83D2A000F06224 /* AccountInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountInfoInteractor.swift; path = AccountInfo/AccountInfoInteractor.swift; sourceTree = "<group>"; };
 		0C3E811B1E83D2A000F06224 /* AccountInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountInfoPresenter.swift; path = AccountInfo/AccountInfoPresenter.swift; sourceTree = "<group>"; };
 		0C3E811C1E83D2A000F06224 /* AccountInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountInfoView.swift; path = AccountInfo/AccountInfoView.swift; sourceTree = "<group>"; };
-		0C6B90CF1E827CF600A2BA6B /* AccountNetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountNetworkHelper.swift; sourceTree = "<group>"; };
-		0C6B90D11E827CFF00A2BA6B /* CarNetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarNetworkHelper.swift; sourceTree = "<group>"; };
-		0C6B90D31E827D0900A2BA6B /* AccountDatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDatabaseHelper.swift; sourceTree = "<group>"; };
-		0C6B90D51E827D1600A2BA6B /* CarDatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDatabaseHelper.swift; sourceTree = "<group>"; };
-		0C6B90D81E8285E500A2BA6B /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		0C5AF5C51EB1EF7E00113A95 /* ValidationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		0CCCBBAC1E811119003C6B8A /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		0CCCBBAD1E811119003C6B8A /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		0CCCBBAE1E811119003C6B8A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -110,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1652201EAF472F00D05FDB /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				0C0796EC1E84F8F200AFED96 /* ResetPasswordInteractor.swift */,
+				0C0796ED1E84F8F200AFED96 /* ResetPasswordPresenter.swift */,
+				0C0796EE1E84F8F200AFED96 /* ResetPasswordView.swift */,
+			);
+			name = ResetPassword;
+			sourceTree = "<group>";
+		};
 		0C1D3A381E88C3B600F43708 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +133,16 @@
 				0C1D3A3E1E88C73500F43708 /* NavigationApplicationService.swift */,
 			);
 			name = ApplicationService;
+			sourceTree = "<group>";
+		};
+		0C36C5EE1EB1DDA70009A1FC /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0C36C5E81EB1DDA10009A1FC /* RegisterInteractor.swift */,
+				0C36C5E91EB1DDA10009A1FC /* RegisterPresenter.swift */,
+				0C36C5EA1EB1DDA10009A1FC /* RegisterView.swift */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 		0C3E53121E7A74A0001459FD = {
@@ -150,50 +167,31 @@
 			isa = PBXGroup;
 			children = (
 				0C3E531E1E7A74A0001459FD /* AppDelegate.swift */,
+				0C36DCF41EB0436E00C67813 /* MyPlayground.playground */,
 				0C1D3A3D1E88C5B600F43708 /* ApplicationService */,
 				0C1D3A341E88C33200F43708 /* PluggableApplicationDelegate.swift */,
 				0C1D3A381E88C3B600F43708 /* DependencyInjection */,
 				0C3E53361E7A797F001459FD /* MainRouter.swift */,
+				0C36C5EF1EB1E44D0009A1FC /* UIHelper.swift */,
+				0C5AF5C51EB1EF7E00113A95 /* ValidationHelper.swift */,
 				0CCCBBB71E811487003C6B8A /* ViewControllerExtension.swift */,
 				0CCCBBC61E821F26003C6B8A /* NibNameExtension.swift */,
 				0CCCBBD11E826D4D003C6B8A /* UITableViewAdditions.swift */,
-				0C6B90D71E827D1B00A2BA6B /* DataHelper */,
 				0CCCBBCF1E826D3D003C6B8A /* ReusableView.swift */,
 				0CCCBBC81E823C81003C6B8A /* RouterInteractor.swift */,
 				0CCCBBCE1E826D1D003C6B8A /* CarCell */,
 				0C3E53221E7A74A0001459FD /* Main.storyboard */,
-				0C0796EC1E84F8F200AFED96 /* ResetPasswordInteractor.swift */,
-				0C0796ED1E84F8F200AFED96 /* ResetPasswordPresenter.swift */,
-				0C0796EE1E84F8F200AFED96 /* ResetPasswordView.swift */,
-				0C3E53251E7A74A0001459FD /* Assets.xcassets */,
 				0C3E53271E7A74A0001459FD /* LaunchScreen.storyboard */,
+				0C3E53251E7A74A0001459FD /* Assets.xcassets */,
 				0C3E532A1E7A74A0001459FD /* Info.plist */,
+				0C36C5EE1EB1DDA70009A1FC /* Register */,
+				0C1652201EAF472F00D05FDB /* ResetPassword */,
 				0C3E81201E83D2A400F06224 /* AccountInfo */,
 				0CCCBBB41E811170003C6B8A /* Entity */,
 				0CCCBBBF1E812703003C6B8A /* List */,
 				0CCCBBAB1E811119003C6B8A /* Login */,
 			);
 			path = CleanBoilerplate;
-			sourceTree = "<group>";
-		};
-		0C3E81141E83C42500F06224 /* CarHelper */ = {
-			isa = PBXGroup;
-			children = (
-				0C6B90D11E827CFF00A2BA6B /* CarNetworkHelper.swift */,
-				0C6B90D51E827D1600A2BA6B /* CarDatabaseHelper.swift */,
-				0C3E81161E83C5CE00F06224 /* CarResourceHelper.swift */,
-			);
-			name = CarHelper;
-			sourceTree = "<group>";
-		};
-		0C3E81151E83C42D00F06224 /* AccountHelper */ = {
-			isa = PBXGroup;
-			children = (
-				0C6B90CF1E827CF600A2BA6B /* AccountNetworkHelper.swift */,
-				0C6B90D31E827D0900A2BA6B /* AccountDatabaseHelper.swift */,
-				0C3E81181E83CD3300F06224 /* AccountResourceHelper.swift */,
-			);
-			name = AccountHelper;
 			sourceTree = "<group>";
 		};
 		0C3E81201E83D2A400F06224 /* AccountInfo */ = {
@@ -204,16 +202,6 @@
 				0C3E811C1E83D2A000F06224 /* AccountInfoView.swift */,
 			);
 			name = AccountInfo;
-			sourceTree = "<group>";
-		};
-		0C6B90D71E827D1B00A2BA6B /* DataHelper */ = {
-			isa = PBXGroup;
-			children = (
-				0C3E81151E83C42D00F06224 /* AccountHelper */,
-				0C3E81141E83C42500F06224 /* CarHelper */,
-				0C6B90D81E8285E500A2BA6B /* Errors.swift */,
-			);
-			name = DataHelper;
 			sourceTree = "<group>";
 		};
 		0CCCBBAB1E811119003C6B8A /* Login */ = {
@@ -373,7 +361,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AD5F55AF90B979A399DBABA7 /* [CP] Embed Pods Frameworks */ = {
@@ -401,39 +389,37 @@
 				0CCCBBB81E811487003C6B8A /* ViewControllerExtension.swift in Sources */,
 				0C1D3A371E88C3AF00F43708 /* Assembly.swift in Sources */,
 				0C0796F11E84F8F200AFED96 /* ResetPasswordView.swift in Sources */,
-				0C6B90D21E827CFF00A2BA6B /* CarNetworkHelper.swift in Sources */,
-				0C3E81171E83C5CE00F06224 /* CarResourceHelper.swift in Sources */,
 				0CCCBBD21E826D4D003C6B8A /* UITableViewAdditions.swift in Sources */,
-				0C6B90D61E827D1600A2BA6B /* CarDatabaseHelper.swift in Sources */,
 				0CCCBBD01E826D3D003C6B8A /* ReusableView.swift in Sources */,
-				0C3E81191E83CD3300F06224 /* AccountResourceHelper.swift in Sources */,
 				0CCCBBC31E8219BC003C6B8A /* CarEntity.swift in Sources */,
 				0C1D3A3F1E88C73500F43708 /* NavigationApplicationService.swift in Sources */,
 				0C1D3A3A1E88C42C00F43708 /* FacebookApplicationService.swift in Sources */,
+				0C5AF5C61EB1EF7E00113A95 /* ValidationHelper.swift in Sources */,
 				0CCCBBBD1E8126FF003C6B8A /* ListPresenter.swift in Sources */,
 				0C3E811E1E83D2A000F06224 /* AccountInfoPresenter.swift in Sources */,
 				0CCCBBC51E821C22003C6B8A /* StatusEntity.swift in Sources */,
 				0CCCBBBE1E8126FF003C6B8A /* ListView.swift in Sources */,
 				0CCCBBC11E82198F003C6B8A /* ListEntity.swift in Sources */,
+				0C36C5ED1EB1DDA10009A1FC /* RegisterView.swift in Sources */,
+				0C36C5F01EB1E44D0009A1FC /* UIHelper.swift in Sources */,
 				0CCCBBB01E811119003C6B8A /* LoginPresenter.swift in Sources */,
 				0C0796EF1E84F8F200AFED96 /* ResetPasswordInteractor.swift in Sources */,
 				0CCCBBB61E811170003C6B8A /* UserEntity.swift in Sources */,
 				0C3E531F1E7A74A0001459FD /* AppDelegate.swift in Sources */,
-				0C6B90D01E827CF600A2BA6B /* AccountNetworkHelper.swift in Sources */,
 				0C3E53371E7A797F001459FD /* MainRouter.swift in Sources */,
 				0CCCBBB11E811119003C6B8A /* LoginView.swift in Sources */,
 				0CCCBBBC1E8126FF003C6B8A /* ListInteractor.swift in Sources */,
 				0C1D3A351E88C33300F43708 /* PluggableApplicationDelegate.swift in Sources */,
+				0C36C5EB1EB1DDA10009A1FC /* RegisterInteractor.swift in Sources */,
 				0C3E811F1E83D2A000F06224 /* AccountInfoView.swift in Sources */,
 				0CCCBBC71E821F26003C6B8A /* NibNameExtension.swift in Sources */,
+				0C36C5EC1EB1DDA10009A1FC /* RegisterPresenter.swift in Sources */,
 				0C0796F01E84F8F200AFED96 /* ResetPasswordPresenter.swift in Sources */,
-				0C6B90D91E8285E500A2BA6B /* Errors.swift in Sources */,
 				0C1D3A3C1E88C59E00F43708 /* GoogleApplicationService.swift in Sources */,
 				0CCCBBC91E823C81003C6B8A /* RouterInteractor.swift in Sources */,
 				0C3E811D1E83D2A000F06224 /* AccountInfoInteractor.swift in Sources */,
 				0CCCBBCD1E826D16003C6B8A /* CarCell.swift in Sources */,
 				0CCCBBAF1E811119003C6B8A /* LoginInteractor.swift in Sources */,
-				0C6B90D41E827D0900A2BA6B /* AccountDatabaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
