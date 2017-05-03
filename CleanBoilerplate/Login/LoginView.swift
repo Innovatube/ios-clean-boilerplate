@@ -94,19 +94,38 @@ class LoginView : UIViewController, LoginViewInterface, UITextFieldDelegate, GID
   }
   
   func facebookLoginButtonTouched(_ button: UIButton){
-    FBSDKLoginManager().logIn(withReadPermissions: ["public_profile"], from: self) { (_, _) in
-      
-    }
+    // Please make sure to :
+    // - Register your facebook app id 
+    // - Config the plist file
+    // - Config the app delegate
+    // Before uncomment the line below
+//    FBSDKLoginManager().logIn(withReadPermissions: ["public_profile"], from: self) { (_, _) in
+//      
+//    }
+    presentInfoAlert(title: "Facebook login required setup", message: "Please go to LoginView/facebookLoginButtonTouched to edit")
   }
   
   func googleSignInButtonTouched(_ button: UIButton){
-    GIDSignIn.sharedInstance().signIn()
+    // Please make sure to :
+    // - Register your google app
+    // - Download the googleSetting plist file
+    // - Config the app delegate
+    // Before uncomment the line below
+//    GIDSignIn.sharedInstance().signIn()
+    presentInfoAlert(title: "Google login required setup", message: "Please go to LoginView/googleSignInButtonTouched to edit")
+  }
+  
+  func presentInfoAlert(title: String, message: String){
+    let alertController =  UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let confirmAction = UIAlertAction(title: "OK", style: .cancel)
+    alertController.addAction(confirmAction)
+    present(alertController, animated: true)
   }
   
   //MARK: LoginViewInterface
   
   func loginSuccess() {
-    router.displayListView()
+    router.displaySideMenuView()
   }
   
   func loginButton(isValid: Bool) {
