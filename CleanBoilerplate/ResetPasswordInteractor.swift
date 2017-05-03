@@ -9,9 +9,18 @@
 import Foundation
 
 protocol ResetPasswordInteractorInterface {
-
+  func change(email: String)
+  func resetPassword()
 }
 
 class ResetPasswordInteractor : ResetPasswordInteractorInterface {
-    var presenter : ResetPasswordPresenterInterface!
+  var presenter : ResetPasswordPresenterInterface!
+  
+  func change(email: String) {
+    presenter.email(isValid:ValidationHelper.validate(email: email))
+  }
+  
+  func resetPassword() {
+    presenter.resetPasswordSuccess()
+  }
 }

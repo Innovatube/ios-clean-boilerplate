@@ -29,9 +29,9 @@ class RegisterView : UIViewController, RegisterViewInterface, UITextFieldDelegat
   override func viewDidLoad() {
     super.viewDidLoad()
     customizeField()
-    
     setupAction()
     emailField.becomeFirstResponder()
+    registerButton.isEnabled = false
   }
   
   func customizeField() {
