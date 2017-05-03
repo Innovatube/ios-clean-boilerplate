@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 protocol ListViewInterface {
   func reloadWith(data: [String])
@@ -15,6 +16,8 @@ protocol ListViewInterface {
 class ListView : UIViewController, ListViewInterface {
   var interactor : ListInteractorInterface!
   var router : MainRouter!
+  var menuView: UIViewController?
+  var burgerButton = HamburgerButton(frame: CGRect(origin: .zero, size: CGSize(width: 30, height: 30)))
   
   @IBOutlet var tableView : UITableView!
   var data: [String] = []
@@ -23,9 +26,34 @@ class ListView : UIViewController, ListViewInterface {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(requestReloadData(_:)), for: .valueChanged)
     tableView.refreshControl = refreshControl
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.registerNib(forCellType: CarCell.self)
+    
     let settingButton = UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: #selector(routeToAccountView))
-    navigationItem.rightBarButtonItem = settingButton
-
+    navigationItem.rightBarButtonItem? = settingButton
+    
+    if let menuView = menuView { setup(menuView: menuView) }
+  }
+  
+  func setup(menuView: UIViewController){
+    let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: menuView)
+    menuLeftNavigationController.leftSide = false
+    SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+    SideMenuManager.menuFadeStatusBar = false
+    SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+    SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+    
+    let burgerBarItem = UIBarButtonItem(customView: burgerButton)
+    navigationItem.leftBarButtonItem = burgerBarItem
+    burgerButton.addTarget(self, action: #selector(toogleMenu), for: .touchUpInside)
+  }
+  
+  func toogleMenu(){
+    if let menuView = SideMenuManager.menuLeftNavigationController {
+      present(menuView, animated: true)
+    }
   }
   
   func routeToAccountView(){
@@ -62,7 +90,7 @@ extension ListView :  UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(type: CarCell.self, for: indexPath)
     cell.indexPath = indexPath
     cell.carCellDelegate = self
-//    cell.carEntity = data[indexPath.row]
+    cell.carNameLabel.text = data[indexPath.row]
     return cell
   }
 }

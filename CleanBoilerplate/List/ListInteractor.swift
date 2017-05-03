@@ -18,19 +18,14 @@ class ListInteractor : ListInteractorInterface {
   var presenter : ListPresenterInterface!
   
   func requestReloadData(id: Int, offset: Int) {
-//      resourceHelper.cars().subscribe(onNext: { (entities) in
-//        self.presenter.reload(data: entities.map{ $0.name ?? "" } )
-//      }, onError: { (_) in
-//        self.presenter.retrieveDataFailed()
-//      })
+    presenter.reload(data: ["Test"])
   }
   
   func bidCar(id: Int, price: Int) {
-//    resourceHelper.carBid(id: id, price: price).subscribe(onNext: { (_) in
-//      self.presenter.biddingSuccess()
-//    }) { (_) in
-//      self.presenter.biddingFailed()
-//    }
+    // Send bidding request
+    // If success
+//    presenter.bidding(isSuccess: true)
+    presenter.reload(data: ["Test", "Another"])
   }
   
 }

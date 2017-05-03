@@ -37,6 +37,17 @@ class CarCell : UITableViewCell, NibLoadableView, ReusableView {
     }
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    bidButton.backgroundColor = Constants.Color.orange
+    carImageView.backgroundColor = Constants.Color.green
+    descriptionMessageTextView.backgroundColor = Constants.Color.blue
+    carNameLabel.backgroundColor = Constants.Color.blue
+    yomLabel.backgroundColor = Constants.Color.blue
+    bidButton.backgroundColor = Constants.Color.orange
+    biddingLabel.isHidden = true
+  }
+  
   override func layoutSubviews() {
     super.layoutSubviews()
     if bidButton.allTargets.count == 0 {

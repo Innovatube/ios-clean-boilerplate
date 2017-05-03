@@ -10,6 +10,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--MenuView-->
+        <scene sceneID="Bow-VU-Vuq">
+            <objects>
+                <viewController storyboardIdentifier="MenuView" title="MenuView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U8M-Mp-9AH" customClass="MenuView" customModule="CleanBoilerplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hjr-C9-gLU"/>
+                        <viewControllerLayoutGuide type="bottom" id="c4v-bt-WRx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cjs-Oz-4dI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6L2-C4-QjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="-554"/>
+        </scene>
         <!--LoginView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -95,7 +113,7 @@
         <!--ResetPassword-->
         <scene sceneID="dGq-wF-XOo">
             <objects>
-                <viewController storyboardIdentifier="ResetPassword" title="ResetPassword" id="mUs-o7-U0o" customClass="ResetPasswordView" customModule="CleanBoilerplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetPasswordView" title="ResetPassword" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mUs-o7-U0o" customClass="ResetPasswordView" customModule="CleanBoilerplate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lnt-ax-upg"/>
                         <viewControllerLayoutGuide type="bottom" id="nxV-0c-qt2"/>
@@ -138,6 +156,10 @@
                             <constraint firstItem="ceP-yi-bDu" firstAttribute="leading" secondItem="CS1-V4-Exf" secondAttribute="leadingMargin" id="hx5-7r-vCV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="jZn-Sg-cbU" id="rVj-7O-gqb"/>
+                        <outlet property="resetPasswordButton" destination="ceP-yi-bDu" id="57V-bC-j9r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ou0-Vf-HI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +243,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="am5-Xs-zTc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="am5-Xs-zTc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

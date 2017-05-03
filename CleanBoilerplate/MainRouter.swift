@@ -96,4 +96,26 @@ class MainRouter {
     navigationController.pushViewController(view, animated: true)
 
   }
+  
+  func displaySideMenuView() {
+    guard let view : ListView = UIStoryboard.main.instantiateVC() else {
+      print ("Error getting ListView")
+      return
+    }
+    let presenter = ListPresenter()
+    let interactor = ListInteractor()
+    guard let menuView: MenuView = UIStoryboard.main.instantiateVC() else {
+      return
+    }
+    view.menuView = menuView
+    view.interactor = interactor
+    interactor.presenter = presenter
+    presenter.view = view
+    view.router = self
+    
+    let navigationController = UINavigationController(rootViewController: view)
+    UIApplication.shared.keyWindow?.rootViewController = navigationController
+  }
+  
+  
 }

@@ -10,9 +10,7 @@ import Foundation
 
 protocol ListPresenterInterface {
   func reload(data: [String])
-  func retrieveDataFailed()
-  func biddingSuccess()
-  func biddingFailed()
+  func bidding(isSuccess: Bool)
 }
 
 class ListPresenter: ListPresenterInterface {
@@ -22,15 +20,7 @@ class ListPresenter: ListPresenterInterface {
     view.reloadWith(data: data)
   }
   
-  func retrieveDataFailed(){
-    
-  }
-  
-  func biddingSuccess(){
-    
-  }
-  
-  func biddingFailed(){
+  func bidding(isSuccess: Bool){
     
   }
 
