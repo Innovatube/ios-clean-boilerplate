@@ -8,6 +8,8 @@ target 'CleanBoilerplate' do
   pod 'FBSDKLoginKit'
   pod 'Google/SignIn'
 
+  pod 'Moya/RxSwift'
+
   pod 'RxSwift'
   pod 'Alamofire'
   pod 'RxAlamofire'
