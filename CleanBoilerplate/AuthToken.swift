@@ -8,9 +8,11 @@
 
 import Foundation
 
+struct Credential {
+  var username: String
+  var password: String
+}
+
 struct AuthToken {
-  var username : String?
-  var password: String?
-  var token : String?
-  var refreshToken : String?
+  var token : String
 }

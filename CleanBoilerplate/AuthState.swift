@@ -22,13 +22,7 @@ enum AuthState {
   }
   
   func support(target: APITargetType) -> Bool {
-    if !target.isRequiredAuth {
-      return true
-    } else if target.isRequiredAuth && self == .authenticated {
-      return true
-    } else {
-      return false
-    }
+    return !(target.isRequiredAuth && self != .authenticated)
   }
   
   func canTransitionTo(_ nextState: AuthState) -> Bool {
