@@ -10,6 +10,7 @@
 		0C0796EF1E84F8F200AFED96 /* ResetPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0796EC1E84F8F200AFED96 /* ResetPasswordInteractor.swift */; };
 		0C0796F01E84F8F200AFED96 /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0796ED1E84F8F200AFED96 /* ResetPasswordPresenter.swift */; };
 		0C0796F11E84F8F200AFED96 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0796EE1E84F8F200AFED96 /* ResetPasswordView.swift */; };
+		0C09A5BF1ECD82DA00AD2530 /* HTTPAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C09A5BE1ECD82DA00AD2530 /* HTTPAuthProvider.swift */; };
 		0C1D3A351E88C33300F43708 /* PluggableApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D3A341E88C33200F43708 /* PluggableApplicationDelegate.swift */; };
 		0C1D3A371E88C3AF00F43708 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D3A361E88C3AF00F43708 /* Assembly.swift */; };
 		0C1D3A3A1E88C42C00F43708 /* FacebookApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D3A391E88C42C00F43708 /* FacebookApplicationService.swift */; };
@@ -62,6 +63,7 @@
 		0C0796EC1E84F8F200AFED96 /* ResetPasswordInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordInteractor.swift; sourceTree = "<group>"; };
 		0C0796ED1E84F8F200AFED96 /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		0C0796EE1E84F8F200AFED96 /* ResetPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		0C09A5BE1ECD82DA00AD2530 /* HTTPAuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPAuthProvider.swift; sourceTree = "<group>"; };
 		0C1D3A341E88C33200F43708 /* PluggableApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluggableApplicationDelegate.swift; sourceTree = "<group>"; };
 		0C1D3A361E88C3AF00F43708 /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		0C1D3A391E88C42C00F43708 /* FacebookApplicationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookApplicationService.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				0C2A43041ECC3BAB00450AB0 /* AuthProvider.swift */,
 				0C2A43061ECC405500450AB0 /* AuthState.swift */,
+				0C09A5BE1ECD82DA00AD2530 /* HTTPAuthProvider.swift */,
 				0C2A430C1ECC488C00450AB0 /* AuthToken.swift */,
 				0C2A43081ECC40E000450AB0 /* API.swift */,
 				0C2A430A1ECC41B600450AB0 /* CompositeEncoding.swift */,
@@ -446,6 +449,7 @@
 				0CCCBBBD1E8126FF003C6B8A /* ListPresenter.swift in Sources */,
 				0C3E811E1E83D2A000F06224 /* AccountInfoPresenter.swift in Sources */,
 				0CCCBBC51E821C22003C6B8A /* StatusEntity.swift in Sources */,
+				0C09A5BF1ECD82DA00AD2530 /* HTTPAuthProvider.swift in Sources */,
 				0CCCBBBE1E8126FF003C6B8A /* ListView.swift in Sources */,
 				0CCCBBC11E82198F003C6B8A /* ListEntity.swift in Sources */,
 				0C2A43071ECC405500450AB0 /* AuthState.swift in Sources */,
