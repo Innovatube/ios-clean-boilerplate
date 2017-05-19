@@ -23,20 +23,17 @@ class AuthProvider {
   var provider : APIProvider { return APIProvider() }
   var authState : AuthState = .initial
   var queue: DispatchQueue = DispatchQueue(label: queueID, attributes: [])
-  let loginTarget : APITargetType
-  let logoutTarget : APITargetType
+  var loginTarget : APITargetType?
+  var logoutTarget : APITargetType?
   
-  init(loginTarget: APITargetType, logoutTarget: APITargetType){
-    self.loginTarget = loginTarget
-    self.logoutTarget = logoutTarget
-  }
-  
-  fileprivate func advanceAuthState(_ nextState: AuthState) {
+  internal func advanceAuthState(_ nextState: AuthState) {
     func login() -> Observable<()> {
+      guard let loginTarget = loginTarget else { return Observable.error(AuthError(message: "Missing login target")) }
       return provider.request(MultiTarget(loginTarget)).retry(3).filterSuccessfulStatusCodes().map{ _ in () }
     }
     
     func logout() -> Observable<()> {
+      guard let logoutTarget = logoutTarget else  { return Observable.error(AuthError(message: "Missing logout target")) }
       return provider.request(MultiTarget(logoutTarget)).retry(3).filterSuccessfulStatusCodes().map{ _ in () }
     }
     
@@ -75,7 +72,8 @@ class AuthProvider {
     queue.async{ execute() }
   }
   
-  open func login() {
+  open func login(target: APITargetType) {
+    self.loginTarget = target
     if authState.canTransitionTo(.authenticated){
       advanceAuthState(.authenticated)
     }
@@ -89,7 +87,8 @@ class AuthProvider {
     }
   }
   
-  func logout() {
+  func logout(target: APITargetType) {
+    self.logoutTarget = target
     if authState.canTransitionTo(.noToken) {
       advanceAuthState(.noToken)
     }
