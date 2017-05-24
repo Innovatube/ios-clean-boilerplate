@@ -10,12 +10,18 @@ target 'CleanBoilerplate' do
 
   pod 'Moya/RxSwift'
 
-  pod 'RxSwift'
+ # Reactive
+ # Waiting RxSwift 4.0 for concatMap
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'develop'
+  pod 'RxCocoa', '~> 3.0'
   pod 'Alamofire'
   pod 'RxAlamofire'
   pod 'RealmSwift'
   pod 'RxRealm'
-  
+
+  pod 'KeychainAccess'
+
+
   pod 'SideMenu'
   # Top bar loading animation for any network in progress
   #  pod 'DSGradientProgressView'
