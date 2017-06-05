@@ -9,10 +9,10 @@ target 'CleanBoilerplate' do
   pod 'Google/SignIn'
 
   pod 'Moya/RxSwift'
+  pod 'Moya-ObjectMapper/RxSwift'
 
  # Reactive
- # Waiting RxSwift 4.0 for concatMap
-  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'develop'
+  pod 'RxSwift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
   pod 'Alamofire'
   pod 'RxAlamofire'
