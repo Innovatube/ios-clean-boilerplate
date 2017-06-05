@@ -14,8 +14,7 @@ protocol Authenticatable {
 
 enum Authentication: String {
     case none
-    case http
-    case accessToken
+    case basic
     case oauth2
 }
 

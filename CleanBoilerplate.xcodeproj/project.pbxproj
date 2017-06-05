@@ -57,16 +57,17 @@
 		0CCCBBCD1E826D16003C6B8A /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBBCC1E826D16003C6B8A /* CarCell.swift */; };
 		0CCCBBD01E826D3D003C6B8A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBBCF1E826D3D003C6B8A /* ReusableView.swift */; };
 		0CCCBBD21E826D4D003C6B8A /* UITableViewAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCCBBD11E826D4D003C6B8A /* UITableViewAdditions.swift */; };
-		57918B1D1ED5998C0067C33B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B121ED5998C0067C33B /* API.swift */; };
-		57918B1E1ED5998C0067C33B /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B131ED5998C0067C33B /* APIProvider.swift */; };
-		57918B1F1ED5998C0067C33B /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B141ED5998C0067C33B /* APITarget.swift */; };
-		57918B201ED5998C0067C33B /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B151ED5998C0067C33B /* AuthenticationProvider.swift */; };
-		57918B211ED5998C0067C33B /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B161ED5998C0067C33B /* AuthToken.swift */; };
-		57918B221ED5998C0067C33B /* CompositeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B171ED5998C0067C33B /* CompositeEncoding.swift */; };
-		57918B231ED5998C0067C33B /* Data+MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B181ED5998C0067C33B /* Data+MimeType.swift */; };
-		57918B241ED5998C0067C33B /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B191ED5998C0067C33B /* MimeType.swift */; };
-		57918B251ED5998C0067C33B /* FlareTargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B1B1ED5998C0067C33B /* FlareTargets.swift */; };
-		57918B261ED5998C0067C33B /* TokenKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57918B1C1ED5998C0067C33B /* TokenKeychainStore.swift */; };
+		5758DDC21EE5BF680025BAA4 /* AccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDB61EE5BF680025BAA4 /* AccessTokenProvider.swift */; };
+		5758DDC31EE5BF680025BAA4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDB71EE5BF680025BAA4 /* API.swift */; };
+		5758DDC41EE5BF680025BAA4 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDB81EE5BF680025BAA4 /* APIProvider.swift */; };
+		5758DDC51EE5BF680025BAA4 /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDB91EE5BF680025BAA4 /* APITarget.swift */; };
+		5758DDC61EE5BF680025BAA4 /* BasicAuthenticationPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDBB1EE5BF680025BAA4 /* BasicAuthenticationPlugin.swift */; };
+		5758DDC71EE5BF680025BAA4 /* OAuth2Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDBC1EE5BF680025BAA4 /* OAuth2Plugin.swift */; };
+		5758DDC81EE5BF680025BAA4 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDBD1EE5BF680025BAA4 /* AuthToken.swift */; };
+		5758DDC91EE5BF680025BAA4 /* CompositeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDBE1EE5BF680025BAA4 /* CompositeEncoding.swift */; };
+		5758DDCA1EE5BF680025BAA4 /* Data+MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDBF1EE5BF680025BAA4 /* Data+MimeType.swift */; };
+		5758DDCB1EE5BF680025BAA4 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDC01EE5BF680025BAA4 /* MimeType.swift */; };
+		5758DDCC1EE5BF680025BAA4 /* TokenKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758DDC11EE5BF680025BAA4 /* TokenKeychainStore.swift */; };
 		8696BC620135B846927F8038 /* Pods_CleanBoilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7191AEF8A26DDBB8BF9AFCC3 /* Pods_CleanBoilerplate.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,16 +124,17 @@
 		0CCCBBCC1E826D16003C6B8A /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		0CCCBBCF1E826D3D003C6B8A /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		0CCCBBD11E826D4D003C6B8A /* UITableViewAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewAdditions.swift; sourceTree = "<group>"; };
-		57918B121ED5998C0067C33B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		57918B131ED5998C0067C33B /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
-		57918B141ED5998C0067C33B /* APITarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
-		57918B151ED5998C0067C33B /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
-		57918B161ED5998C0067C33B /* AuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
-		57918B171ED5998C0067C33B /* CompositeEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeEncoding.swift; sourceTree = "<group>"; };
-		57918B181ED5998C0067C33B /* Data+MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+MimeType.swift"; sourceTree = "<group>"; };
-		57918B191ED5998C0067C33B /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
-		57918B1B1ED5998C0067C33B /* FlareTargets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlareTargets.swift; sourceTree = "<group>"; };
-		57918B1C1ED5998C0067C33B /* TokenKeychainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenKeychainStore.swift; sourceTree = "<group>"; };
+		5758DDB61EE5BF680025BAA4 /* AccessTokenProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenProvider.swift; sourceTree = "<group>"; };
+		5758DDB71EE5BF680025BAA4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5758DDB81EE5BF680025BAA4 /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		5758DDB91EE5BF680025BAA4 /* APITarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
+		5758DDBB1EE5BF680025BAA4 /* BasicAuthenticationPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuthenticationPlugin.swift; sourceTree = "<group>"; };
+		5758DDBC1EE5BF680025BAA4 /* OAuth2Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Plugin.swift; sourceTree = "<group>"; };
+		5758DDBD1EE5BF680025BAA4 /* AuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
+		5758DDBE1EE5BF680025BAA4 /* CompositeEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeEncoding.swift; sourceTree = "<group>"; };
+		5758DDBF1EE5BF680025BAA4 /* Data+MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+MimeType.swift"; sourceTree = "<group>"; };
+		5758DDC01EE5BF680025BAA4 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		5758DDC11EE5BF680025BAA4 /* TokenKeychainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenKeychainStore.swift; sourceTree = "<group>"; };
 		7191AEF8A26DDBB8BF9AFCC3 /* Pods_CleanBoilerplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanBoilerplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BCEF20372ED423223F3FD0 /* Pods-CleanBoilerplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBoilerplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanBoilerplate/Pods-CleanBoilerplate.release.xcconfig"; sourceTree = "<group>"; };
 		D53C1480DDB7529D29574A7F /* Pods-CleanBoilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBoilerplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanBoilerplate/Pods-CleanBoilerplate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -324,29 +326,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5758DDB51EE5BF680025BAA4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5758DDB61EE5BF680025BAA4 /* AccessTokenProvider.swift */,
+				5758DDB71EE5BF680025BAA4 /* API.swift */,
+				5758DDB81EE5BF680025BAA4 /* APIProvider.swift */,
+				5758DDB91EE5BF680025BAA4 /* APITarget.swift */,
+				5758DDBA1EE5BF680025BAA4 /* Authentication Plugins */,
+				5758DDBD1EE5BF680025BAA4 /* AuthToken.swift */,
+				5758DDBE1EE5BF680025BAA4 /* CompositeEncoding.swift */,
+				5758DDBF1EE5BF680025BAA4 /* Data+MimeType.swift */,
+				5758DDC01EE5BF680025BAA4 /* MimeType.swift */,
+				5758DDC11EE5BF680025BAA4 /* TokenKeychainStore.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5758DDBA1EE5BF680025BAA4 /* Authentication Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				5758DDBB1EE5BF680025BAA4 /* BasicAuthenticationPlugin.swift */,
+				5758DDBC1EE5BF680025BAA4 /* OAuth2Plugin.swift */,
+			);
+			path = "Authentication Plugins";
+			sourceTree = "<group>";
+		};
 		57918B111ED5998C0067C33B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				57918B121ED5998C0067C33B /* API.swift */,
-				57918B131ED5998C0067C33B /* APIProvider.swift */,
-				57918B141ED5998C0067C33B /* APITarget.swift */,
-				57918B151ED5998C0067C33B /* AuthenticationProvider.swift */,
-				57918B161ED5998C0067C33B /* AuthToken.swift */,
-				57918B171ED5998C0067C33B /* CompositeEncoding.swift */,
-				57918B181ED5998C0067C33B /* Data+MimeType.swift */,
-				57918B191ED5998C0067C33B /* MimeType.swift */,
-				57918B1A1ED5998C0067C33B /* Targets */,
-				57918B1C1ED5998C0067C33B /* TokenKeychainStore.swift */,
+				5758DDB51EE5BF680025BAA4 /* Networking */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		57918B1A1ED5998C0067C33B /* Targets */ = {
-			isa = PBXGroup;
-			children = (
-				57918B1B1ED5998C0067C33B /* FlareTargets.swift */,
-			);
-			path = Targets;
 			sourceTree = "<group>";
 		};
 		6AFDEE609C327869F21DCBB6 /* Frameworks */ = {
@@ -484,11 +495,14 @@
 			files = (
 				0C5AF5CA1EB2F8C600113A95 /* MenuInteractor.swift in Sources */,
 				0CCCBBB81E811487003C6B8A /* ViewControllerExtension.swift in Sources */,
-				57918B201ED5998C0067C33B /* AuthenticationProvider.swift in Sources */,
 				0C2A43051ECC3BAB00450AB0 /* AuthProvider.swift in Sources */,
+				5758DDC81EE5BF680025BAA4 /* AuthToken.swift in Sources */,
+				5758DDC91EE5BF680025BAA4 /* CompositeEncoding.swift in Sources */,
 				0C1D3A371E88C3AF00F43708 /* Assembly.swift in Sources */,
+				5758DDCA1EE5BF680025BAA4 /* Data+MimeType.swift in Sources */,
 				0C0796F11E84F8F200AFED96 /* ResetPasswordView.swift in Sources */,
 				0CCCBBD21E826D4D003C6B8A /* UITableViewAdditions.swift in Sources */,
+				5758DDC61EE5BF680025BAA4 /* BasicAuthenticationPlugin.swift in Sources */,
 				0C5AF5CF1EB3261700113A95 /* HamburgerButton.swift in Sources */,
 				0C5AF5CC1EB2F8C600113A95 /* MenuView.swift in Sources */,
 				0CCCBBD01E826D3D003C6B8A /* ReusableView.swift in Sources */,
@@ -496,23 +510,20 @@
 				0C1D3A3F1E88C73500F43708 /* NavigationApplicationService.swift in Sources */,
 				0C1D3A3A1E88C42C00F43708 /* FacebookApplicationService.swift in Sources */,
 				0C5AF5C61EB1EF7E00113A95 /* ValidationHelper.swift in Sources */,
-				57918B1F1ED5998C0067C33B /* APITarget.swift in Sources */,
 				0CCCBBBD1E8126FF003C6B8A /* ListPresenter.swift in Sources */,
 				0C3E811E1E83D2A000F06224 /* AccountInfoPresenter.swift in Sources */,
 				0CCCBBC51E821C22003C6B8A /* StatusEntity.swift in Sources */,
+				5758DDC41EE5BF680025BAA4 /* APIProvider.swift in Sources */,
 				0C09A5C11ECD900D00AD2530 /* TokenAuthProvider.swift in Sources */,
-				57918B1E1ED5998C0067C33B /* APIProvider.swift in Sources */,
 				0C09A5BF1ECD82DA00AD2530 /* HTTPAuthProvider.swift in Sources */,
 				0CCCBBBE1E8126FF003C6B8A /* ListView.swift in Sources */,
-				57918B231ED5998C0067C33B /* Data+MimeType.swift in Sources */,
-				57918B241ED5998C0067C33B /* MimeType.swift in Sources */,
 				0CCCBBC11E82198F003C6B8A /* ListEntity.swift in Sources */,
 				0C2A43071ECC405500450AB0 /* AuthState.swift in Sources */,
-				57918B221ED5998C0067C33B /* CompositeEncoding.swift in Sources */,
 				0C36C5ED1EB1DDA10009A1FC /* RegisterView.swift in Sources */,
+				5758DDC51EE5BF680025BAA4 /* APITarget.swift in Sources */,
 				0C36C5F01EB1E44D0009A1FC /* UIHelper.swift in Sources */,
-				57918B211ED5998C0067C33B /* AuthToken.swift in Sources */,
 				0C2A430D1ECC488C00450AB0 /* AuthToken.swift in Sources */,
+				5758DDC71EE5BF680025BAA4 /* OAuth2Plugin.swift in Sources */,
 				0CCCBBB01E811119003C6B8A /* LoginPresenter.swift in Sources */,
 				0C9F3A731EB9C2370031FFB1 /* Constants.swift in Sources */,
 				0C0796EF1E84F8F200AFED96 /* ResetPasswordInteractor.swift in Sources */,
@@ -521,22 +532,23 @@
 				0C3E53371E7A797F001459FD /* MainRouter.swift in Sources */,
 				0CCCBBB11E811119003C6B8A /* LoginView.swift in Sources */,
 				0C2A430B1ECC41B700450AB0 /* CompositeEncoding.swift in Sources */,
-				57918B251ED5998C0067C33B /* FlareTargets.swift in Sources */,
 				0CCCBBBC1E8126FF003C6B8A /* ListInteractor.swift in Sources */,
 				0C1D3A351E88C33300F43708 /* PluggableApplicationDelegate.swift in Sources */,
-				57918B1D1ED5998C0067C33B /* API.swift in Sources */,
 				0C36C5EB1EB1DDA10009A1FC /* RegisterInteractor.swift in Sources */,
 				0C3E811F1E83D2A000F06224 /* AccountInfoView.swift in Sources */,
+				5758DDCB1EE5BF680025BAA4 /* MimeType.swift in Sources */,
+				5758DDC21EE5BF680025BAA4 /* AccessTokenProvider.swift in Sources */,
 				0CCCBBC71E821F26003C6B8A /* NibNameExtension.swift in Sources */,
 				0C36C5EC1EB1DDA10009A1FC /* RegisterPresenter.swift in Sources */,
 				0C2A43091ECC40E000450AB0 /* API.swift in Sources */,
+				5758DDCC1EE5BF680025BAA4 /* TokenKeychainStore.swift in Sources */,
 				0C0796F01E84F8F200AFED96 /* ResetPasswordPresenter.swift in Sources */,
 				0C1D3A3C1E88C59E00F43708 /* GoogleApplicationService.swift in Sources */,
 				0CCCBBC91E823C81003C6B8A /* RouterInteractor.swift in Sources */,
 				0C3E811D1E83D2A000F06224 /* AccountInfoInteractor.swift in Sources */,
 				0CCCBBCD1E826D16003C6B8A /* CarCell.swift in Sources */,
-				57918B261ED5998C0067C33B /* TokenKeychainStore.swift in Sources */,
 				0CCCBBAF1E811119003C6B8A /* LoginInteractor.swift in Sources */,
+				5758DDC31EE5BF680025BAA4 /* API.swift in Sources */,
 				0C5AF5CB1EB2F8C600113A95 /* MenuPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
