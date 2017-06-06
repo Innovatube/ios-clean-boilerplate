@@ -16,7 +16,7 @@ github "Moya/Moya"
 
 ## Usage
 
-### 1. Setup your API targets
+### Setup your API targets
 First, create your targets file like `GithubTargets.swift`:
 
 ```ruby
@@ -33,6 +33,7 @@ struct GithubTargets {
 
 ```
 
+
 Your API Target must conform `APITargetType`. This is composition protocol of Moya `TargetType` and `Authenticatable`:
 ```ruby
 protocol APITargetType: TargetType, Authenticatable {
@@ -42,8 +43,7 @@ protocol APITargetType: TargetType, Authenticatable {
 
 Then add your API's information:
 
-
-##### API Base URL:
+#### 1. API Base URL:
 
 ```ruby
 struct GithubTargets {
@@ -66,7 +66,8 @@ extension APITargetType {
 
 If you're using more than one API base URL, separate them out into separate Targets.
 
-##### Path:
+
+#### 2. Path:
 
 ```ruby
 struct GithubTargets {
@@ -77,8 +78,9 @@ struct GithubTargets {
     }
 
 ```
-##### HTTP Method:
 
+
+#### 3. HTTP Method:
 
 ```ruby
 struct GithubTargets {
@@ -92,7 +94,8 @@ struct GithubTargets {
 
 ```
 
-##### Task:
+
+#### 4. Task:
 Represents how you are sending / receiving data. This can be either `.request, .upload or .download`, and allows you to add data, files and streams to the request body.
 ```ruby
 struct GithubTargets {
@@ -103,9 +106,9 @@ struct GithubTargets {
     }
 
 ```
-_______
 
-##### Parameters:
+
+#### 5.  Parameters:
 Add your API parameters as Struct's properties so you can create Target easily by Struct initializer:
 
 ```ruby
@@ -132,7 +135,8 @@ struct GithubTargets {
 
 Parameter is typealias of Dictionary [String: Any]. If you don't have any parameters, return `nil` would work.
 
-##### Parameter Encoding:
+
+#### 6.Parameter Encoding:
 This indicate how we want our parameters to be encoded into our request. Moya has `URLEncoding`, `JSONEncoding`, and `PropertyListEncoding` or you can create your custom ParameterEncoding that conform to `ParameterEncoding` (see CompositeEncoding):
 
 ```ruby
@@ -161,7 +165,7 @@ extension APITargetType {
 ```
 
 
-##### Authentication:
+#### 7.Authentication:
 Set your authentication method. Currently, our API template only support `Basic` and `OAuth2 (flow: password)`. See more([Authentication](https://github.com/Moya/Moya/blob/master/docs/Authentication.md) )
 ```ruby
 struct GithubTargets {
@@ -173,7 +177,8 @@ struct GithubTargets {
     }
 ```
 
-##### Sample Data:
+
+#### 8.Sample Data:
 This can be used later for tests or for providing offline support for developers. If you don't write unit test, simply return empty data:
 
 ```ruby
@@ -186,7 +191,7 @@ struct GithubTargets {
 ```
 
 
-### 2. Custom ParameterEncoding
+### Custom ParameterEncoding
 This is custom Moya implementation to use with Swagger Codegen.
 
 Moya only support single type of parameter encoding in per API but you can create custom ParameterEncoding to support many parameter type with different encoding type. In case your API has different encode type, you need to create custom `ParameterEncoding` and conform to `ParameterEncoding`.
@@ -247,4 +252,4 @@ struct GithubTargets {
 
 This part will be automatic generate by using Swagger Codegen.
 
-### 3. Authentication
+### Authentication
