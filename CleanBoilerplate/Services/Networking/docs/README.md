@@ -18,12 +18,14 @@ github "Moya/Moya"
 
 - [Basic](#setup-your-api-targets)
 - [Custom Parameter Encoding](#custom-parameterencoding)
-- [Installation](#installation)
+- [Authentication](#authentication)
 
 
 #### Setup your API targets
 
-![Moya Overview](docs/http_diagram.png)
+![inline 75%](docs/http_diagram.png)
+
+
 First, create your targets file like `GithubTargets.swift`:
 
 ```ruby
