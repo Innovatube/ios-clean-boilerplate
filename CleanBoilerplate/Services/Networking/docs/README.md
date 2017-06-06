@@ -1,4 +1,4 @@
-https://docs.google.com/presentation/d/1FVmWHkuJ8N8Y3O5nT9G7y_e7kzCacCEcqiH3NIJ7E_g/edit?usp=sharing
+## [Moya Introduction](https://docs.google.com/presentation/d/1FVmWHkuJ8N8Y3O5nT9G7y_e7kzCacCEcqiH3NIJ7E_g/edit?usp=sharing)
 
 ## [Moya Github](https://github.com/Moya/Moya/)
 
@@ -16,7 +16,14 @@ github "Moya/Moya"
 
 ## Usage
 
-### Setup your API targets
+- [Basic](#Setup-your-API-targets)
+- [Custom Parameter Encoding](#custom-parameterEncoding)
+- [Authentication](#Authentication)
+
+
+#### Setup your API targets
+
+![Moya Overview](http_diagram.png)
 First, create your targets file like `GithubTargets.swift`:
 
 ```ruby
@@ -30,7 +37,7 @@ struct GithubTargets {
     struct LoginTarget: APITargetType {
 
     }
-
+}
 ```
 
 
@@ -67,7 +74,7 @@ extension APITargetType {
 If you're using more than one API base URL, separate them out into separate Targets.
 
 
-#### 2. Path:
+#### 2.Path:
 
 ```ruby
 struct GithubTargets {
@@ -76,11 +83,11 @@ struct GithubTargets {
         let baseURL: URL = URL(string: "http://github.com/api/v1")!
         let path: String = "/login"
     }
-
+}
 ```
 
 
-#### 3. HTTP Method:
+#### 3.HTTP Method:
 
 ```ruby
 struct GithubTargets {
@@ -91,7 +98,7 @@ struct GithubTargets {
 
         let method: Moya.Method = .get
     }
-
+}
 ```
 
 
@@ -104,7 +111,7 @@ struct GithubTargets {
         //...
         let task: Task = .request
     }
-
+}
 ```
 
 
@@ -131,13 +138,14 @@ struct GithubTargets {
             return params
         }
     }
+}
 ```
 
 Parameter is typealias of Dictionary [String: Any]. If you don't have any parameters, return `nil` would work.
 
 
 #### 6.Parameter Encoding:
-This indicate how we want our parameters to be encoded into our request. Moya has `URLEncoding`, `JSONEncoding`, and `PropertyListEncoding` or you can create your custom ParameterEncoding that conform to `ParameterEncoding` (see CompositeEncoding):
+This indicate how we want our parameters to be encoded into our request. Moya has `URLEncoding`, `JSONEncoding`, and `PropertyListEncoding` or you can create your custom ParameterEncoding that conform to `ParameterEncoding` (see [CompositeEncoding](#custom-parameterEncoding)):
 
 ```ruby
 struct GithubTargets {
@@ -151,7 +159,7 @@ struct GithubTargets {
         //...
         let parameterEncoding: ParameterEncoding = URLEncoding.default
     }
-
+}
 ```
 
 Normally, you will use one type of ParameterEncoding at once, so you add default encoding by using extension:
@@ -175,6 +183,7 @@ struct GithubTargets {
         let authentication: Authentication = .oauth2
 
     }
+}
 ```
 
 
@@ -188,10 +197,11 @@ struct GithubTargets {
         //...
         let sampleData: Data = Data()
     }
+}
 ```
 
 
-### Custom ParameterEncoding
+## Custom ParameterEncoding
 This is custom Moya implementation to use with Swagger Codegen.
 
 Moya only support single type of parameter encoding in per API but you can create custom ParameterEncoding to support many parameter type with different encoding type. In case your API has different encode type, you need to create custom `ParameterEncoding` and conform to `ParameterEncoding`.
@@ -199,7 +209,7 @@ Moya only support single type of parameter encoding in per API but you can creat
 We already created `CompositeEncoding` which will fit almost case (see detail implementation [CompositeEncoding](https://CompositeEncoding.swift))
 
 #### Usage:
-You need to set your parameters by using `CompositeParameters` and don't forget to convert it to `Moya.Parameters` with `toParameters` functionn:
+You need to set your parameters by using `CompositeParameters` and don't forget to convert it to `Moya.Parameters` with `toParameters` function:
 
 ```ruby
 struct GithubTargets {
@@ -232,6 +242,7 @@ struct GithubTargets {
             return compositeParameters.toParameters()
         }
     }
+}
 ```
 
 Then override your custom ParameterEncoding:
@@ -252,4 +263,4 @@ struct GithubTargets {
 
 This part will be automatic generate by using Swagger Codegen.
 
-### Authentication
+## Authentication
