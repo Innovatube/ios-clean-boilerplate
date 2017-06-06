@@ -147,7 +147,7 @@ Parameter is typealias of Dictionary [String: Any]. If you don't have any parame
 
 
 #### 6.Parameter Encoding:
-This indicate how we want our parameters to be encoded into our request. Moya has `URLEncoding`, `JSONEncoding`, and `PropertyListEncoding` or you can create your custom ParameterEncoding that conform to `ParameterEncoding` (see [CompositeEncoding](#custom-parameterEncoding)):
+This indicate how we want our parameters to be encoded into our request. Moya has `URLEncoding`, `JSONEncoding`, and `PropertyListEncoding` or you can create your custom ParameterEncoding that conform to `ParameterEncoding` (see [CompositeEncoding](#custom-parameterencoding)):
 
 ```ruby
 struct GithubTargets {
@@ -164,7 +164,7 @@ struct GithubTargets {
 }
 ```
 
-Normally, you will use one type of ParameterEncoding at once, so you add default encoding by using extension:
+Normally, you will use one type of ParameterEncoding at once, so you can add default encoding by using extension:
 ```ruby
 extension APITargetType {
     var parameterEncoding: Parameter {
@@ -237,8 +237,8 @@ struct GithubTargets {
 
             // Add more type of parameters here
 
-            compositeParameters.headerParameters = headerParameters
-            compositeParameters.formParameters = formParameters
+            compositeParameters.header = headerParameters
+            compositeParameters.form = formParameters
 
             // Finally
             return compositeParameters.toParameters()

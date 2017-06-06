@@ -10,10 +10,10 @@ import Alamofire
 import Moya
 
 public struct CompositeParameters {
-    public var headerParameters: [String: String]? = nil
-    public var bodyParameters: Parameters? = nil
-    public var formParameters: Parameters? = nil
-    public var queryParameters: Parameters? = nil
+    public var header: [String: String]? = nil
+    public var body: Parameters? = nil
+    public var form: Parameters? = nil
+    public var query: Parameters? = nil
 }
 
 public struct CompositeEncoding: ParameterEncoding {
@@ -24,20 +24,20 @@ public struct CompositeEncoding: ParameterEncoding {
         }
         var compositeRequest = try urlRequest.asURLRequest()
 
-        if let bodyParameters = parameters.bodyParameters {
+        if let bodyParameters = parameters.body {
             compositeRequest = try JSONEncoding.default.encode(urlRequest, with: bodyParameters)
-        } else if let formParameters = parameters.formParameters {
+        } else if let formParameters = parameters.form {
             compositeRequest = try URLEncoding.default.encode(urlRequest, with: formParameters)
         }
 
         // Add Query Parameter
-        if let queryParamters = parameters.queryParameters {
+        if let queryParamters = parameters.query {
             let queryRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParamters)
             compositeRequest.url = queryRequest.url
         }
 
         // Header Parameter
-        parameters.headerParameters?.forEach { key , value in
+        parameters.header?.forEach { key , value in
             compositeRequest.addValue(value, forHTTPHeaderField: key)
         }
 
