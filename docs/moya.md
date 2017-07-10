@@ -270,5 +270,13 @@ This part will be automatic generate by using Swagger Codegen.
 
 ## Authentication
 
+`AccessTokenProvider` will automatically refresh your AccessToken when it expired. All you need to do is provide Refresh Token API.
+You can do pre-refresh before expiry date by specific TimeInterval in class `AccessToken`.
+
+For more detai usage, please see this example: [Moya Example](https://github.com/Innovatube/auth-moya-boilerplate)
 
 ## Plugins
+- BasicAuthenticationPlugin
+- JWTPlugin: JSON Web Access Token Plugin
+- NetworkErrorLogger: Log Network Error with SwiftyBeaver
+- NetworkErrorTransformPlugin: Transform API Error
