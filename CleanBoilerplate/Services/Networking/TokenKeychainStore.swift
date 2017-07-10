@@ -12,84 +12,58 @@ import RxSwift
 
 private let appName: String = (Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String) ?? "AppName"
 
-private let AuthUsername = "AuthUsername"
-private let AuthPassword = "AuthPassword"
-private let AuthTokenKey = "AuthToken"
-private let AuthTokenRefresh = "AuthTokenRefresh"
-private let AuthTokenType = "AuthTokenType"
-private let AuthTokenExpiryDate = "AuthTokenExpiryDate"
-
-extension Authentication {
-    // Keychain key
-    var usernameKey: String {
-        return appName
-            .appending(".")
-            .appending(self.rawValue)
-            .appending(AuthUsername)
-    }
-
-    var passwordKey: String { return "\(appName).\(self.rawValue).\(AuthPassword)" }
-
-    var tokenKey: String { return "\(appName).\(self.rawValue).\(AuthTokenKey)" }
-
-    var tokenRefreshKey: String { return "\(appName).\(self.rawValue).\(AuthTokenRefresh)" }
-
-    var tokenTypeKey: String { return "\(appName).\(self.rawValue).\(AuthTokenType)" }
-
-    var expiryDateKey: String { return "\(appName).\(self.rawValue).\(AuthTokenExpiryDate)" }
-}
+private let usernameKey = "AuthUsername"
+private let passwordKey = "AuthPassword"
+private let tokenKey = "AccessToken"
+private let tokenRefreshKey = "AccessTokenRefresh"
+private let tokenTypeKey = "AccessTokenType"
+private let expiryDateKey = "AccessTokenExpiryDate"
 
 struct TokenKeychainStore {
     static let `default`: TokenKeychainStore = TokenKeychainStore()
-
-    typealias TokenData = (token: AuthToken, type: Authentication)
-    private let tokenSubject = PublishSubject<TokenData>()
+    private let tokenSubject = PublishSubject<AccessToken>()
     private let keychain: Keychain
 
     init(keychain: Keychain = Keychain(service: Bundle.main.bundleIdentifier!)) {
         self.keychain = keychain
     }
 
-    func store(token: AuthToken, type: Authentication) {
-        keychain[type.usernameKey] = token.username
-        keychain[type.passwordKey] = token.password
-        keychain[type.tokenKey] = token.accessToken
-        keychain[type.tokenRefreshKey] = token.refreshToken
-        keychain[type.tokenTypeKey] = token.tokenType
-        keychain[type.expiryDateKey] = token.expiryDate?.string(format: .iso8601Auto)
+    func store(token: AccessToken) {
+        keychain[usernameKey] = token.username
+        keychain[passwordKey] = token.password
+        keychain[tokenKey] = token.accessToken
+        keychain[tokenRefreshKey] = token.refreshToken
+        keychain[tokenTypeKey] = token.tokenType
+        keychain[expiryDateKey] = token.expiryDate?.string(format: .iso8601Auto)
 
-        tokenSubject.onNext(TokenData(token: token, type: type))
+        tokenSubject.onNext(token)
     }
 
-    func getToken(type: Authentication) -> AuthToken  {
+    var currentToken: AccessToken {
 
-        let username = keychain[type.usernameKey]
-        let password = keychain[type.passwordKey]
-        let accessToken = keychain[type.tokenKey]
-        let tokenType = keychain[type.tokenTypeKey]
-        let refreshToken = keychain[type.tokenRefreshKey]
-        let expiryDate = keychain[type.expiryDateKey]?.date(format: .iso8601Auto)?.absoluteDate
+        let username = keychain[usernameKey]
+        let password = keychain[passwordKey]
+        let accessToken = keychain[tokenKey]
+        let tokenType = keychain[tokenTypeKey]
+        let refreshToken = keychain[tokenRefreshKey]
+        let expiryDate = keychain[expiryDateKey]?.date(format: .iso8601Auto)?.absoluteDate
 
-        let authToken = AuthToken(username: username, password: password, accessToken: accessToken, tokenType: tokenType, refreshToken: refreshToken, expiryDate: expiryDate)
-        return authToken
+        let token = AccessToken(username: username, password: password, accessToken: accessToken, tokenType: tokenType, refreshToken: refreshToken, expiryDate: expiryDate)
+        return token
     }
 
-    func clearToken(type: Authentication) {
-        keychain[type.usernameKey] = nil
-        keychain[type.passwordKey] = nil
-        keychain[type.tokenKey] = nil
-        keychain[type.tokenRefreshKey] = nil
-        keychain[type.tokenTypeKey] = nil
-        keychain[type.expiryDateKey] = nil
+    func clearToken() {
+        keychain[usernameKey] = nil
+        keychain[passwordKey] = nil
+        keychain[tokenKey] = nil
+        keychain[tokenRefreshKey] = nil
+        keychain[tokenTypeKey] = nil
+        keychain[expiryDateKey] = nil
 
-        tokenSubject.onNext(TokenData(token: AuthToken(), type: type))
+        tokenSubject.onNext(AccessToken())
     }
 
-    func observeToken(type: Authentication) -> Observable<AuthToken> {
-        let currentToken = getToken(type: type)
-        return tokenSubject
-            .filter { $0.type == type }
-            .map { token, _ in return token }
-            .startWith(currentToken)
+    func observeToken() -> Observable<AccessToken> {
+        return tokenSubject.startWith(currentToken)
     }
 }

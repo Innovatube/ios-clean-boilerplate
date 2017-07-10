@@ -8,18 +8,28 @@ target 'CleanBoilerplate' do
   pod 'FBSDKLoginKit'
   pod 'Google/SignIn'
 
-  pod 'Moya/RxSwift'
-  pod 'Moya-ObjectMapper/RxSwift'
-
- # Reactive
-  pod 'RxSwift', '~> 3.0'
-  pod 'RxCocoa', '~> 3.0'
+  # Network
   pod 'Alamofire'
-  pod 'RxAlamofire'
+  pod 'Moya/RxSwift'
+  pod 'ObjectMapper'
+  pod 'Moya-ObjectMapper/RxSwift'
   pod 'RealmSwift'
-  pod 'RxRealm'
 
+  # Reactive
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Action'
+  pod 'RxSwiftExt'
+  pod 'RxOptional'
+  pod 'RxRealm'
+  pod 'RxAlamofire'
+
+  # Others
+  pod 'SwiftDate'
   pod 'KeychainAccess'
+
+  # Debug
+  pod 'SwiftyBeaver'
 
 
   pod 'SideMenu'

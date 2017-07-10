@@ -5,56 +5,55 @@
 //  Copyright © 2017 Innovatube. All rights reserved.
 //
 
+import Foundation
 import Moya
 import RxSwift
-import RxSwiftExt
+
+let NotSignInNotification =  Notification.Name("NotSignIn")
 
 class API {
     static let `default` = API()
 
     let provider: RxMoyaProvider<MultiTarget>
-    let tokenProvider: AuthTokenProvider
+    let tokenProvider: AccessTokenProvider
 
     private let disposeBag: DisposeBag = DisposeBag()
 
-    init(provider: RxMoyaProvider<MultiTarget> = APIProvider(), tokenProvider: AuthTokenProvider = AccessTokenProvider(authenticationType: .oauth2)) {
+    init(provider: RxMoyaProvider<MultiTarget> = APIProvider(), tokenProvider: AccessTokenProvider = DefaultAccessTokenProvider()) {
         self.provider = provider
         self.tokenProvider = tokenProvider
     }
 
-    func authenticateRequest(target: APITargetType) -> Observable<Event<Response>> {
-        guard target.authentication != .none else {
-            return provider.request(MultiTarget(target)).materialize()
-        }
+    func request(target: APITargetType) -> Observable<Response> {
+        return provider
+            .request(MultiTarget(target))
+            .filterSuccessfulStatusCodes()
+    }
 
-        return tokenProvider
-            .token
-            .flatMap { [weak self] token -> Observable<Event<Response>> in
-                guard token.isValid else {
-                    let userInfo = [
-                        NSLocalizedDescriptionKey: NSLocalizedString("Could not get authentication information!", comment: "Please sign in again."),
-                        NSLocalizedFailureReasonErrorKey: NSLocalizedString("Not authorized.", comment: "Please sign in again.")
-                    ]
-                    let error = NSError(domain: AuthenticatioErrorDomain, code: 401, userInfo: userInfo)
-                    return Observable.error(error).materialize()
+    func authenticateRequest(target: APITargetType) -> Observable<Response> {
+        return provider
+            .request(MultiTarget(target))
+            .do(onNext: { response in
+                if response.statusCode == 401 {
+                    NotificationCenter.default.post(name: NotSignInNotification, object: nil)
                 }
-                guard let strongSelf = self else { return Observable.empty() }
-                return strongSelf.provider.request(MultiTarget(target)).materialize()
-            }
-            .shareReplayLatestWhileConnected()
+            })
+            .filterSuccessfulStatusCodes()
     }
 
     func requestWithProgress(target: APITargetType) -> Observable<ProgressResponse> {
         return provider.requestWithProgress(MultiTarget(target))
     }
-
-    func request(target: APITargetType) -> Observable<Response> {
-        return provider.request(MultiTarget(target))
-    }
 }
 
 extension API {
-    class func authenticateRequest(target: APITargetType) -> Observable<Event<Response>> {
+    /// Request with Default API instance
+    class func request(target: APITargetType) -> Observable<Response> {
+        return `default`.request(target: target)
+    }
+    
+    /// Authenticate Request with Default API instance
+    class func authenticateRequest(target: APITargetType) -> Observable<Response> {
         return `default`.authenticateRequest(target: target)
     }
 }

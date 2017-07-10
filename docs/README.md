@@ -15,15 +15,18 @@ github "Moya/Moya"
 ```
 
 ## Usage
-
+- [Example](#example)
 - [Basic](#setup-your-api-targets)
 - [Custom Parameter Encoding](#custom-parameterencoding)
 - [Authentication](#authentication)
+- [Plugins](#plugins)
 
+### Example
+Please see code example here: [Moya Example](https://github.com/Innovatube/auth-moya-boilerplate)
 
 #### Setup your API targets
 
-![inline 75%](docs/http_diagram.png)
+![inline 75%](http_diagram.png)
 
 
 First, create your targets file like `GithubTargets.swift`:
@@ -266,3 +269,6 @@ struct GithubTargets {
 This part will be automatic generate by using Swagger Codegen.
 
 ## Authentication
+
+
+## Plugins

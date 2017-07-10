@@ -16,6 +16,18 @@ public struct CompositeParameters {
     public var query: Parameters? = nil
 }
 
+private let CompositeParametersKey = "CompositeParameters"
+public extension CompositeParameters {
+
+    func toParameters() -> Parameters {
+        return [CompositeParametersKey: self]
+    }
+
+    static func from(_ parameters: Parameters?) -> CompositeParameters? {
+        return parameters?[CompositeParametersKey] as? CompositeParameters
+    }
+}
+
 public struct CompositeEncoding: ParameterEncoding {
 
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
@@ -24,10 +36,10 @@ public struct CompositeEncoding: ParameterEncoding {
         }
         var compositeRequest = try urlRequest.asURLRequest()
 
-        if let bodyParameters = parameters.body {
-            compositeRequest = try JSONEncoding.default.encode(urlRequest, with: bodyParameters)
-        } else if let formParameters = parameters.form {
-            compositeRequest = try URLEncoding.default.encode(urlRequest, with: formParameters)
+        if let body = parameters.body {
+            compositeRequest = try JSONEncoding.default.encode(urlRequest, with: body)
+        } else if let form = parameters.form {
+            compositeRequest = try URLEncoding.default.encode(urlRequest, with: form)
         }
 
         // Add Query Parameter
@@ -45,15 +57,4 @@ public struct CompositeEncoding: ParameterEncoding {
     }
 }
 
-private let CompositeParametersKey = "CompositeParameters"
 
-public extension CompositeParameters {
-
-    func toMoyaParameters() -> Parameters {
-        return [CompositeParametersKey: self]
-    }
-
-    static func from(_ parameters: Parameters?) -> CompositeParameters? {
-        return parameters?[CompositeParametersKey] as? CompositeParameters
-    }
-}

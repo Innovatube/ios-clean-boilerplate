@@ -15,6 +15,7 @@ protocol Authenticatable {
 enum Authentication: String {
     case none
     case basic
+    case accessToken
     case oauth2
 }
 
@@ -27,11 +28,11 @@ extension APITargetType {
     }
 
     var baseURL: URL {
-        return URL(string: "")!
+        return URL(string: "http://api/v1")!
     }
 
     var authentication: Authentication {
-        return .none
+        return .oauth2
     }
 
     var parameters: Parameters? {

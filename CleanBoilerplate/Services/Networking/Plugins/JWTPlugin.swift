@@ -1,5 +1,5 @@
 //
-//  OAuth2Plugin.swift
+//  JWTPlugin.swift
 //  CarBid
 //
 //  Created by Dang Thai Son on 5/26/17.
@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-struct OAuth2Plugin: PluginType {
+struct JWTPlugin: PluginType {
     let tokenStore: TokenKeychainStore
 
     init(tokenStore: TokenKeychainStore = TokenKeychainStore.default) {
@@ -18,10 +18,10 @@ struct OAuth2Plugin: PluginType {
 
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         guard let target = target.rawTarget as? Authenticatable else { return request }
-        guard target.authentication == .oauth2 else { return request }
+        guard target.authentication == .accessToken || target.authentication == .oauth2 else { return request }
 
-        let authToken = tokenStore.getToken(type: target.authentication)
-        guard authToken.isValid, let accessToken = authToken.accessToken, let tokenType = authToken.tokenType else { return request }
+        let token = tokenStore.currentToken
+        guard token.isValid, let accessToken = token.accessToken, let tokenType = token.tokenType else { return request }
 
         var request = request
         request.addValue("\(tokenType) \(accessToken)", forHTTPHeaderField: "Authorization")

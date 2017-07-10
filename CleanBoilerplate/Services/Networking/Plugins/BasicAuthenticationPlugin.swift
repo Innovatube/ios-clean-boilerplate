@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-import Result
 
 struct BasicAuthenticationPlugin: PluginType {
     let tokenStore: TokenKeychainStore
@@ -21,11 +20,10 @@ struct BasicAuthenticationPlugin: PluginType {
         guard let target = target.rawTarget as? Authenticatable else { return  }
         guard target.authentication == .basic else { return }
 
-        let authToken = tokenStore.getToken(type: target.authentication)
-        guard authToken.isValid else { return }
+        let token = tokenStore.currentToken
+        guard token.isValid else { return }
 
-        guard let username = authToken.username, let password = authToken.password else { return }
+        guard let username = token.username, let password = token.password else { return }
         let _ = request.authenticate(user: username, password: password, persistence: .none)
-
     }
 }
