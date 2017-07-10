@@ -8,14 +8,30 @@ target 'CleanBoilerplate' do
   pod 'FBSDKLoginKit'
   pod 'Google/SignIn'
 
-  pod 'Moya/RxSwift'
-
-  pod 'RxSwift'
+  # Network
   pod 'Alamofire'
-  pod 'RxAlamofire'
+  pod 'Moya/RxSwift'
+  pod 'ObjectMapper'
+  pod 'Moya-ObjectMapper/RxSwift'
   pod 'RealmSwift'
+
+  # Reactive
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Action'
+  pod 'RxSwiftExt'
+  pod 'RxOptional'
   pod 'RxRealm'
-  
+  pod 'RxAlamofire'
+
+  # Others
+  pod 'SwiftDate'
+  pod 'KeychainAccess'
+
+  # Debug
+  pod 'SwiftyBeaver'
+
+
   pod 'SideMenu'
   # Top bar loading animation for any network in progress
   #  pod 'DSGradientProgressView'

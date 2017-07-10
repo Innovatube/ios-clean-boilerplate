@@ -1,0 +1,32 @@
+platform :ios, '9.0'
+
+use_frameworks!
+
+def shared_pods
+# Network
+    pod 'Alamofire'
+    pod 'Moya'
+    pod 'ObjectMapper'
+    pod 'Moya-ObjectMapper/RxSwift'
+    pod 'RealmSwift'
+
+    # Reactive
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'Action'
+    pod 'RxSwiftExt'
+    pod 'RxOptional'
+    pod 'RxRealm'
+
+    # Others
+    pod 'SwiftDate'
+    pod 'KeychainAccess'
+
+    # Debug
+    pod 'SwiftyBeaver'
+
+end
+
+target 'Moya Example' do
+    shared_pods
+end
